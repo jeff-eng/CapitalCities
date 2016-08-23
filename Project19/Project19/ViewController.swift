@@ -9,7 +9,7 @@
 import MapKit
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         let washington = Capital(title: "Washington, D.C.", info: "Named after George himself.", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667))
         
         mapView.addAnnotations([london, oslo, paris, rome, washington])
+        
+        mapView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +65,18 @@ class ViewController: UIViewController {
         return nil
     
     }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        
+        let capital = view.annotation as! Capital
+        let placeName = capital.title
+        let placeInfo = capital.info
+        
+        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .ActionSheet)
+        ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(ac, animated: true, completion: nil)
+    }
+    
 
 }
 
