@@ -13,6 +13,7 @@
 		95D975CA1D6B8CF000F0FEFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D975C91D6B8CF000F0FEFA /* Assets.xcassets */; };
 		95D975CD1D6B8CF000F0FEFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D975CB1D6B8CF000F0FEFA /* LaunchScreen.storyboard */; };
 		95D975D51D6BB39700F0FEFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D975D41D6BB39700F0FEFA /* MapKit.framework */; };
+		95D975D71D6BB99F00F0FEFA /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D975D61D6BB99F00F0FEFA /* Capital.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		95D975CC1D6B8CF000F0FEFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95D975CE1D6B8CF000F0FEFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D975D41D6BB39700F0FEFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		95D975D61D6BB99F00F0FEFA /* Capital.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				95D975C21D6B8CF000F0FEFA /* AppDelegate.swift */,
 				95D975C41D6B8CF000F0FEFA /* ViewController.swift */,
 				95D975C61D6B8CF000F0FEFA /* Main.storyboard */,
+				95D975D61D6BB99F00F0FEFA /* Capital.swift */,
 				95D975C91D6B8CF000F0FEFA /* Assets.xcassets */,
 				95D975CB1D6B8CF000F0FEFA /* LaunchScreen.storyboard */,
 				95D975CE1D6B8CF000F0FEFA /* Info.plist */,
@@ -146,6 +149,7 @@
 			files = (
 				95D975C51D6B8CF000F0FEFA /* ViewController.swift in Sources */,
 				95D975C31D6B8CF000F0FEFA /* AppDelegate.swift in Sources */,
+				95D975D71D6BB99F00F0FEFA /* Capital.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
