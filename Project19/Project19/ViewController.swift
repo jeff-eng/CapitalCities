@@ -30,6 +30,39 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        // 1) Define a reuse identifier. This is a string that will be used to ensure we reuse annotation views as much as possible
+        let identifier = "Capital"
+        
+        // 2) Check whether the annotation we're creating a view for is one of our Capital objects
+        if annotation is Capital {
+            
+            // 3) Try to dequeue an annotation view from the map view's pool of unused views.
+            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+            
+            if annotationView == nil {
+                
+                // 4) If it isn't able to find a reusable view, create a new one using MKPinAnnotationView and set its canShowCallout property to be true. This triggers the popup with the city name.
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView?.canShowCallout = true
+                
+                // 5) Create a new UIButton using the built-in .DetailDisclosure type. This is a small blue "i" symbol with a circle around it.
+                let btn = UIButton(type: .DetailDisclosure)
+                annotationView!.rightCalloutAccessoryView = btn
+            } else {
+                
+                // 6) If it can reuse a view, update that view to use a different annotation.
+                annotationView!.annotation = annotation
+            }
+            
+            return annotationView
+        }
+        
+        // 7) If the annotation isn't from a capital city, it must return nil so iOS uses a default view.
+        return nil
+    
+    }
 
 }
 
